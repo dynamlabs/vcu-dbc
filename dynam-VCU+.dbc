@@ -1,0 +1,113 @@
+VERSION "1.0"
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: MCU VCU
+
+
+BO_ 100 VCU_torque: 3 MCU
+ SG_ Throttle : 0|16@1- (0.01,0) [-100|100] "%"  VCU
+ SG_ Checksum : 16|8@1+ (1,0) [0|255] ""  VCU
+
+BO_ 101 VCU_shift: 1 MCU
+ SG_ VCU_gearRequest : 0|3@1+ (1,0) [0|7] ""  VCU
+
+BO_ 102 VCU_state: 2 VCU
+ SG_ VCU_vehicleState : 11|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCU_pedal : 0|8@1+ (0.5,0) [0|100] "%"  MCU
+ SG_ VCU_gearActual : 8|3@1+ (1,0) [0|7] ""  MCU
+
+BO_ 200 DI_state: 6 VCU
+ SG_ DI_rpm : 0|16@1- (1,0) [-32768|32767] "RPM"  MCU
+ SG_ DI_torque : 16|16@1- (0.1,0) [-3276.8|3276.7] "Nm"  MCU
+ SG_ DI_voltage : 32|16@1+ (0.1,0) [0|6553.5] "V"  MCU
+
+BO_ 201 DIS_state: 4 VCU
+ SG_ DIS_rpm : 0|16@1- (1,0) [-32768|32767] "RPM"  MCU
+ SG_ DIS_torque : 16|16@1- (0.1,0) [-3276.8|3276.7] "Nm"  MCU
+
+BO_ 202 DI_temperature: 4 VCU
+ SG_ DI_inverterTemp : 24|8@1+ (1,-40) [-40|215] "C" Vector__XXX
+ SG_ DI_statorTemp : 16|8@1+ (1,-40) [-40|215] "C" Vector__XXX
+ SG_ DI_hsTemp : 0|8@1+ (1,-40) [-40|215] "C"  MCU
+ SG_ DI_inletTemp : 8|8@1+ (1,-40) [-40|215] "C"  MCU
+
+BO_ 203 DIS_temperatures: 4 VCU
+ SG_ DIS_statorTemp : 16|8@1+ (1,-40) [-40|215] "C" Vector__XXX
+ SG_ DIS_inverterTemp : 24|8@1+ (1,-40) [-40|215] "C" Vector__XXX
+ SG_ DIS_hsTemp : 0|8@1+ (1,-40) [-40|215] "C"  MCU
+ SG_ DIS_inletTemp : 8|8@1+ (1,-40) [-40|215] "C"  MCU
+
+BO_ 300 BMS_info: 8 VCU
+ SG_ BMS_battV : 0|16@1+ (0.01,0) [0|655.35] "V"  MCU
+ SG_ BMS_cellMin : 16|16@1+ (0.001,0) [0|65.535] "V"  MCU
+ SG_ BMS_cellMax : 32|16@1+ (0.001,0) [0|65.535] "V"  MCU
+ SG_ BMS_precharge : 48|8@1+ (1,0) [0|3] "Status"  MCU
+
+BO_ 400 VCU_gps: 8 VCU
+ SG_ VCU_gpsIndex M : 0|8@1+ (1,0) [0|2] "Mux"  MCU
+ SG_ VCU_lat m0 : 8|32@1+ (1E-06,0) [0|4294.967295] "deg"  MCU
+ SG_ VCU_long m1 : 8|32@1+ (1E-06,0) [0|4294.967295] "deg"  MCU
+ SG_ VCU_gpsVelocity m2 : 8|16@1+ (0.01,0) [0|655.35] "km/h"  MCU
+
+BO_ 500 VCU_error: 4 VCU
+ SG_ VCU_errorMatrix : 0|32@1+ (1,0) [0|4294967295] "ErrorBits"  MCU
+
+
+
+CM_ BO_ 100 "Torque request";
+CM_ BO_ 202 "Primary Drive Inverter temperatures";
+CM_ BO_ 203 "Secondary Motor temperatures";
+CM_ SG_ 300 BMS_battV "Battery Voltage";
+CM_ SG_ 300 BMS_cellMin "Voltage of lowest cell";
+CM_ SG_ 300 BMS_cellMax "Voltage of highes cell";
+CM_ SG_ 300 BMS_precharge "State of pre-charge";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_ "GenMsgCycleTime" BO_ 100 10;
+BA_ "GenMsgCycleTime" BO_ 101 20;
+BA_ "GenMsgCycleTime" BO_ 102 50;
+BA_ "GenMsgCycleTime" BO_ 200 100;
+BA_ "GenMsgCycleTime" BO_ 201 100;
+BA_ "GenMsgCycleTime" BO_ 202 100;
+BA_ "GenMsgCycleTime" BO_ 203 100;
+BA_ "GenMsgCycleTime" BO_ 300 100;
+BA_ "GenMsgCycleTime" BO_ 400 100;
+VAL_ 101 VCU_gearRequest 4 "VCU_GEAR_D" 3 "VCU_GEAR_N" 2 "VCU_GEAR_R" 1 "VCU_GEAR_P" 0 "VCU_GEAR_INVALID" ;
+VAL_ 102 VCU_vehicleState 4 "VCU_STATE_CHARGING" 3 "VCU_STATE_DRIVING" 2 "VCU_STATE_RUNNING" 1 "VCU_STATE_OFF" 0 "VCU_STATE_UNKNOWN" ;
+VAL_ 102 VCU_gearActual 4 "VCU_GEAR_D" 3 "VCU_GEAR_N" 2 "VCU_GEAR_R" 1 "VCU_GEAR_P" 0 "VCU_GEAR_INVALID" ;
+VAL_ 300 BMS_precharge 0 "PRECHARGE_UNKNOWN" 1 "PRECHARGE_WAITING" 2 "PRECHARGE_DONE" 3 "PRECHARGE_FAIL" ;
+VAL_ 400 VCU_gpsIndex 0 "Latitude" 1 "Longitude" 2 "GroundSpeed" ;
+VAL_ 500 VCU_errorMatrix 0 "vcuEthernetInitFail" 1 "vcuStorageInitFail" 2 "vcuCalibDoutInvalid" 3 "vcuCalibPedalInInvalid" 4 "vcuCalibPedalOutInvalid" 5 "vcuCanShifterTimeout" 6 "vcuBrakeswitchInplausible" 7 "vcuCanSocInvalid" 8 "bmsCommError" 9 "bmsCellReadError" 10 "bmsCellOverVoltageError" 11 "vcuPTCanRxCommError" 12 "vcuACCCanRxCommError" 13 "vcuAUXCanRxCommError" 14 "vcuPTCanTxCommError" 15 "vcuACCCanTxCommError" 16 "vcuAUXCanTxCommError" 17 "vcuPedalSignalInvalid" 18 "vcuHwPri5VSupplyError" 19 "vcuHwSec5VSupplyError" ;
+
