@@ -13,7 +13,7 @@ The repository includes:
 | ID  | Name | Sender | Length (bytes) | Cycle Time (ms) | Description |
 |-----|------|--------|----------------|-----------------|-------------|
 | 0x64 | VCU_torque | MCU | 3 | 10 | Torque request |
-| 0x65 | VCU_shift | MCU | 1 | 20 | Gear selection request |
+| 0x65 | VCU_shift | MCU | 1 | - | Gear and drive-mode selection |
 | 0x66 | VCU_state | VCU | 2 | 50 | Vehicle state information |
 | 0xC8 | DI_state | VCU | 6 | 100 | Primary drive inverter state |
 | 0xC9 | DIS_state | VCU | 4 | 100 | Secondary drive inverter state |

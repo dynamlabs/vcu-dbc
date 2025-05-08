@@ -41,6 +41,7 @@ BO_ 100 VCU_torque: 3 MCU
  SG_ Checksum : 16|8@1+ (1,0) [0|255] ""  VCU
 
 BO_ 101 VCU_shift: 1 MCU
+ SG_ VCU_driveMode : 3|3@1- (1,0) [0|0] ""  VCU
  SG_ VCU_gearRequest : 0|3@1+ (1,0) [0|7] ""  VCU
 
 BO_ 102 VCU_state: 2 VCU
@@ -96,7 +97,6 @@ CM_ SG_ 300 BMS_precharge "State of pre-charge";
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
 BA_DEF_DEF_  "GenMsgCycleTime" 0;
 BA_ "GenMsgCycleTime" BO_ 100 10;
-BA_ "GenMsgCycleTime" BO_ 101 20;
 BA_ "GenMsgCycleTime" BO_ 102 50;
 BA_ "GenMsgCycleTime" BO_ 200 100;
 BA_ "GenMsgCycleTime" BO_ 201 100;
@@ -104,7 +104,8 @@ BA_ "GenMsgCycleTime" BO_ 202 100;
 BA_ "GenMsgCycleTime" BO_ 203 100;
 BA_ "GenMsgCycleTime" BO_ 300 100;
 BA_ "GenMsgCycleTime" BO_ 400 100;
-VAL_ 101 VCU_gearRequest 4 "VCU_GEAR_D" 3 "VCU_GEAR_N" 2 "VCU_GEAR_R" 1 "VCU_GEAR_P" 0 "VCU_GEAR_INVALID" ;
+VAL_ 101 VCU_driveMode 4 "DRIVEMODE_VALET" 3 "DRIVEMODE_SPORT" 2 "DRIVEMODE_NORMAL" 1 "DRIVEMODE_CHILL" 0 "DRIVEMODE_NONE" ;
+VAL_ 101 VCU_gearRequest 4 "VCU_GEAR_D" 3 "VCU_GEAR_N" 2 "VCU_GEAR_R" 1 "VCU_GEAR_P" 0 "VCU_GEAR_NONE" ;
 VAL_ 102 VCU_vehicleState 4 "VCU_STATE_CHARGING" 3 "VCU_STATE_DRIVING" 2 "VCU_STATE_RUNNING" 1 "VCU_STATE_OFF" 0 "VCU_STATE_UNKNOWN" ;
 VAL_ 102 VCU_gearActual 4 "VCU_GEAR_D" 3 "VCU_GEAR_N" 2 "VCU_GEAR_R" 1 "VCU_GEAR_P" 0 "VCU_GEAR_INVALID" ;
 VAL_ 300 BMS_precharge 0 "PRECHARGE_UNKNOWN" 1 "PRECHARGE_WAITING" 2 "PRECHARGE_DONE" 3 "PRECHARGE_FAIL" ;
