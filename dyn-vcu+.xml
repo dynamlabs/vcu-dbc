@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- File created by DBCtoRDXML Converter https://github.com/wjcloudy/DBCtoRDXML -->
+<RealDashCAN version="2">
+	<frames>
+		<frame canId="0x64" endianess="little">  <!--VCU_torque-->
+			<value name="VCU_torque_Throttle" startbit="0" bitcount="16" units="%" endianess="little" signed="true" rangeMin="-100" rangeMax="100" conversion="V/100.0"></value><!--Comment=None-->
+			<value name="VCU_torque_Checksum" startbit="16" bitcount="8" units="None" endianess="little" signed="false" rangeMin="0" rangeMax="255" ></value><!--Comment=None-->
+		</frame>
+		<frame canId="0x65" endianess="little">  <!--VCU_shift-->
+			<value name="VCU_shift_VCU_gearRequest" startbit="0" bitcount="3" units="None" endianess="little" signed="false" rangeMin="0" rangeMax="7" ></value><!--Comment=None-->
+			<value name="VCU_shift_VCU_gearRequest_enum" startbit="0" bitcount="3" units="None" endianess="little" signed="false" rangeMin="0" rangeMax="7"  enum="4:VCU_GEAR_D,3:VCU_GEAR_N,2:VCU_GEAR_R,1:VCU_GEAR_P,0:VCU_GEAR_NONE,#:err"></value><!--Comment=None-->
+			<value name="VCU_shift_VCU_driveMode" startbit="3" bitcount="3" units="None" endianess="little" signed="true" rangeMin="None" rangeMax="None" ></value><!--Comment=None-->
+			<value name="VCU_shift_VCU_driveMode_enum" startbit="3" bitcount="3" units="None" endianess="little" signed="true" rangeMin="None" rangeMax="None"  enum="4:DRIVEMODE_VALET,3:DRIVEMODE_SPORT,2:DRIVEMODE_NORMAL,1:DRIVEMODE_CHILL,0:DRIVEMODE_NONE,#:err"></value><!--Comment=None-->
+		</frame>
+		<frame canId="0x66" endianess="little">  <!--VCU_state-->
+			<value name="VCU_state_VCU_pedal" startbit="0" bitcount="8" units="%" endianess="little" signed="false" rangeMin="0" rangeMax="100" conversion="V/2.0"></value><!--Comment=None-->
+			<value name="VCU_state_VCU_gearActual" startbit="8" bitcount="3" units="None" endianess="little" signed="false" rangeMin="0" rangeMax="7" ></value><!--Comment=None-->
+			<value name="VCU_state_VCU_gearActual_enum" startbit="8" bitcount="3" units="None" endianess="little" signed="false" rangeMin="0" rangeMax="7"  enum="4:VCU_GEAR_D,3:VCU_GEAR_N,2:VCU_GEAR_R,1:VCU_GEAR_P,0:VCU_GEAR_INVALID,#:err"></value><!--Comment=None-->
+			<value name="VCU_state_VCU_vehicleState" startbit="11" bitcount="3" units="None" endianess="little" signed="false" rangeMin="0" rangeMax="7" ></value><!--Comment=None-->
+			<value name="VCU_state_VCU_vehicleState_enum" startbit="11" bitcount="3" units="None" endianess="little" signed="false" rangeMin="0" rangeMax="7"  enum="4:VCU_STATE_CHARGING,3:VCU_STATE_DRIVING,2:VCU_STATE_RUNNING,1:VCU_STATE_OFF,0:VCU_STATE_UNKNOWN,#:err"></value><!--Comment=None-->
+		</frame>
+		<frame canId="0xc8" endianess="little">  <!--DI_state-->
+			<value name="DI_state_DI_rpm" startbit="0" bitcount="16" units="RPM" endianess="little" signed="true" rangeMin="-32768" rangeMax="32767" ></value><!--Comment=None-->
+			<value name="DI_state_DI_torque" startbit="16" bitcount="16" units="Nm" endianess="little" signed="true" rangeMin="-3276.8" rangeMax="3276.7" conversion="V/10.0"></value><!--Comment=None-->
+			<value name="DI_state_DI_voltage" startbit="32" bitcount="16" units="V" endianess="little" signed="false" rangeMin="0" rangeMax="6553.5" conversion="V/10.0"></value><!--Comment=None-->
+		</frame>
+		<frame canId="0xc9" endianess="little">  <!--DIS_state-->
+			<value name="DIS_state_DIS_rpm" startbit="0" bitcount="16" units="RPM" endianess="little" signed="true" rangeMin="-32768" rangeMax="32767" ></value><!--Comment=None-->
+			<value name="DIS_state_DIS_torque" startbit="16" bitcount="16" units="Nm" endianess="little" signed="true" rangeMin="-3276.8" rangeMax="3276.7" conversion="V/10.0"></value><!--Comment=None-->
+		</frame>
+		<frame canId="0xca" endianess="little">  <!--DI_temperature-->
+			<value name="DI_temperature_DI_hsTemp" startbit="0" bitcount="8" units="C" endianess="little" signed="false" rangeMin="-40" rangeMax="215" conversion="V-40"></value><!--Comment=None-->
+			<value name="DI_temperature_DI_inletTemp" startbit="8" bitcount="8" units="C" endianess="little" signed="false" rangeMin="-40" rangeMax="215" conversion="V-40"></value><!--Comment=None-->
+			<value name="DI_temperature_DI_statorTemp" startbit="16" bitcount="8" units="C" endianess="little" signed="false" rangeMin="-40" rangeMax="215" conversion="V-40"></value><!--Comment=None-->
+			<value name="DI_temperature_DI_inverterTemp" startbit="24" bitcount="8" units="C" endianess="little" signed="false" rangeMin="-40" rangeMax="215" conversion="V-40"></value><!--Comment=None-->
+		</frame>
+		<frame canId="0xcb" endianess="little">  <!--DIS_temperatures-->
+			<value name="DIS_temperatures_DIS_hsTemp" startbit="0" bitcount="8" units="C" endianess="little" signed="false" rangeMin="-40" rangeMax="215" conversion="V-40"></value><!--Comment=None-->
+			<value name="DIS_temperatures_DIS_inletTemp" startbit="8" bitcount="8" units="C" endianess="little" signed="false" rangeMin="-40" rangeMax="215" conversion="V-40"></value><!--Comment=None-->
+			<value name="DIS_temperatures_DIS_statorTemp" startbit="16" bitcount="8" units="C" endianess="little" signed="false" rangeMin="-40" rangeMax="215" conversion="V-40"></value><!--Comment=None-->
+			<value name="DIS_temperatures_DIS_inverterTemp" startbit="24" bitcount="8" units="C" endianess="little" signed="false" rangeMin="-40" rangeMax="215" conversion="V-40"></value><!--Comment=None-->
+		</frame>
+		<frame canId="0x12c" endianess="little">  <!--BMS_info-->
+			<value name="BMS_info_BMS_battV" startbit="0" bitcount="16" units="V" endianess="little" signed="false" rangeMin="0" rangeMax="655.35" conversion="V/100.0"></value><!--Comment=Battery Voltage-->
+			<value name="BMS_info_BMS_cellMin" startbit="16" bitcount="16" units="V" endianess="little" signed="false" rangeMin="0" rangeMax="65.535" conversion="V/1000.0"></value><!--Comment=Voltage of lowest cell-->
+			<value name="BMS_info_BMS_cellMax" startbit="32" bitcount="16" units="V" endianess="little" signed="false" rangeMin="0" rangeMax="65.535" conversion="V/1000.0"></value><!--Comment=Voltage of highes cell-->
+			<value name="BMS_info_BMS_precharge" startbit="48" bitcount="8" units="Status" endianess="little" signed="false" rangeMin="0" rangeMax="3" ></value><!--Comment=State of pre-charge-->
+			<value name="BMS_info_BMS_precharge_enum" startbit="48" bitcount="8" units="Status" endianess="little" signed="false" rangeMin="0" rangeMax="3"  enum="0:PRECHARGE_UNKNOWN,1:PRECHARGE_WAITING,2:PRECHARGE_DONE,3:PRECHARGE_FAIL,#:err"></value><!--Comment=State of pre-charge-->
+		</frame>
+		<frame canId="0x190" endianess="little">  <!--VCU_gps-->
+			<value name="VCU_gps_VCU_gpsIndex" startbit="0" bitcount="8" units="Mux" endianess="little" signed="false" rangeMin="0" rangeMax="2" ></value><!--Comment=None-->
+			<value name="VCU_gps_VCU_gpsIndex_enum" startbit="0" bitcount="8" units="Mux" endianess="little" signed="false" rangeMin="0" rangeMax="2"  enum="0:Latitude,1:Longitude,2:GroundSpeed,#:err"></value><!--Comment=None-->
+			<value name="VCU_gps_VCU_lat" startbit="8" bitcount="32" units="deg" endianess="little" signed="false" rangeMin="0" rangeMax="4294.967295" conversion="V/1000000.0"></value><!--Comment=None-->
+			<value name="VCU_gps_VCU_long" startbit="8" bitcount="32" units="deg" endianess="little" signed="false" rangeMin="0" rangeMax="4294.967295" conversion="V/1000000.0"></value><!--Comment=None-->
+			<value name="VCU_gps_VCU_gpsVelocity" startbit="8" bitcount="16" units="km/h" endianess="little" signed="false" rangeMin="0" rangeMax="655.35" conversion="V/100.0"></value><!--Comment=None-->
+		</frame>
+		<frame canId="0x1f4" endianess="little">  <!--VCU_error-->
+			<value name="VCU_error_VCU_errorMatrix" startbit="0" bitcount="32" units="ErrorBits" endianess="little" signed="false" rangeMin="0" rangeMax="4294967295" ></value><!--Comment=None-->
+			<value name="VCU_error_VCU_errorMatrix_enum" startbit="0" bitcount="32" units="ErrorBits" endianess="little" signed="false" rangeMin="0" rangeMax="4294967295"  enum="0:vcuEthernetInitFail,1:vcuStorageInitFail,2:vcuCalibDoutInvalid,3:vcuCalibPedalInInvalid,4:vcuCalibPedalOutInvalid,5:vcuCanShifterTimeout,6:vcuBrakeswitchInplausible,7:vcuCanSocInvalid,8:bmsCommError,9:bmsCellReadError,10:bmsCellOverVoltageError,11:vcuPTCanRxCommError,12:vcuACCCanRxCommError,13:vcuAUXCanRxCommError,14:vcuPTCanTxCommError,15:vcuACCCanTxCommError,16:vcuAUXCanTxCommError,17:vcuPedalSignalInvalid,18:vcuHwPri5VSupplyError,19:vcuHwSec5VSupplyError,#:err"></value><!--Comment=None-->
+		</frame>
+	</frames>
+</RealDashCAN>
