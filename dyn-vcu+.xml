@@ -47,11 +47,13 @@
 			<value name="BMS_info_BMS_precharge" startbit="48" bitcount="8" units="Status" endianess="little" signed="false" rangeMin="0" rangeMax="3" ></value><!--Comment=State of pre-charge-->
 			<value name="BMS_info_BMS_precharge_enum" startbit="48" bitcount="8" units="Status" endianess="little" signed="false" rangeMin="0" rangeMax="3"  enum="0:PRECHARGE_UNKNOWN,1:PRECHARGE_WAITING,2:PRECHARGE_DONE,3:PRECHARGE_FAIL,#:err"></value><!--Comment=State of pre-charge-->
 		</frame>
-		<frame canId="0x190" endianess="little">  <!--VCU_gps-->
-			<value name="VCU_gps_VCU_gpsIndex" startbit="0" bitcount="8" units="Mux" endianess="little" signed="false" rangeMin="0" rangeMax="2" ></value><!--Comment=None-->
-			<value name="VCU_gps_VCU_gpsIndex_enum" startbit="0" bitcount="8" units="Mux" endianess="little" signed="false" rangeMin="0" rangeMax="2"  enum="0:Latitude,1:Longitude,2:GroundSpeed,#:err"></value><!--Comment=None-->
+		<frame canId="0x190:0,0,8" endianess="little">  <!--VCU_gps_lat-->
 			<value name="VCU_gps_VCU_lat" startbit="8" bitcount="32" units="deg" endianess="little" signed="false" rangeMin="0" rangeMax="4294.967295" conversion="V/1000000.0"></value><!--Comment=None-->
+		</frame>
+		<frame canId="0x190:1,0,8" endianess="little">  <!--VCU_gps_long-->
 			<value name="VCU_gps_VCU_long" startbit="8" bitcount="32" units="deg" endianess="little" signed="false" rangeMin="0" rangeMax="4294.967295" conversion="V/1000000.0"></value><!--Comment=None-->
+		</frame>
+		<frame canId="0x190:2,0,8" endianess="little">  <!--VCU_gps_vel-->
 			<value name="VCU_gps_VCU_gpsVelocity" startbit="8" bitcount="16" units="km/h" endianess="little" signed="false" rangeMin="0" rangeMax="655.35" conversion="V/100.0"></value><!--Comment=None-->
 		</frame>
 		<frame canId="0x1f4" endianess="little">  <!--VCU_error-->
