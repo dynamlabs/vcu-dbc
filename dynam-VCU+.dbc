@@ -77,6 +77,7 @@ BO_ 300 BMS_info: 8 VCU
  SG_ BMS_precharge : 48|8@1+ (1,0) [0|3] "Status"  MCU
 
 BO_ 400 VCU_gps: 8 VCU
+ SG_ VCU_gpsHeading m3 : 8|16@1+ (0.01,0) [0|360] "deg" Vector__XXX
  SG_ VCU_gpsIndex M : 0|8@1+ (1,0) [0|2] "Mux"  MCU
  SG_ VCU_lat m0 : 8|32@1+ (1E-06,0) [0|4294.967295] "deg"  MCU
  SG_ VCU_long m1 : 8|32@1+ (1E-06,0) [0|4294.967295] "deg"  MCU

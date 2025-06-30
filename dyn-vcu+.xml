@@ -56,6 +56,9 @@
 		<frame canId="0x190:2,0,8" endianess="little">  <!--VCU_gps_vel-->
 			<value name="VCU_gps_VCU_gpsVelocity" startbit="8" bitcount="16" units="km/h" endianess="little" signed="false" rangeMin="0" rangeMax="655.35" conversion="V/100.0"></value><!--Comment=None-->
 		</frame>
+		<frame canId="0x190:3,0,8" endianess="little">  <!--VCU_gps_head-->
+			<value name="VCU_gps_VCU_gpsHeading" startbit="8" bitcount="16" units="deg" endianess="little" signed="false" rangeMin="0" rangeMax="360" conversion="V/100.0"></value><!--Comment=None-->
+		</frame>
 		<frame canId="0x1f4" endianess="little">  <!--VCU_error-->
 			<value name="VCU_error_VCU_errorMatrix" startbit="0" bitcount="32" units="ErrorBits" endianess="little" signed="false" rangeMin="0" rangeMax="4294967295" ></value><!--Comment=None-->
 			<value name="VCU_error_VCU_errorMatrix_enum" startbit="0" bitcount="32" units="ErrorBits" endianess="little" signed="false" rangeMin="0" rangeMax="4294967295"  enum="0:vcuEthernetInitFail,1:vcuStorageInitFail,2:vcuCalibDoutInvalid,3:vcuCalibPedalInInvalid,4:vcuCalibPedalOutInvalid,5:vcuCanShifterTimeout,6:vcuBrakeswitchInplausible,7:vcuCanSocInvalid,8:bmsCommError,9:bmsCellReadError,10:bmsCellOverVoltageError,11:vcuPTCanRxCommError,12:vcuACCCanRxCommError,13:vcuAUXCanRxCommError,14:vcuPTCanTxCommError,15:vcuACCCanTxCommError,16:vcuAUXCanTxCommError,17:vcuPedalSignalInvalid,18:vcuHwPri5VSupplyError,19:vcuHwSec5VSupplyError,#:err"></value><!--Comment=None-->
