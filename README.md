@@ -18,9 +18,9 @@ The repository includes:
 | 0xC8 | DI_state | VCU | 6 | 100 | Primary drive inverter state |
 | 0xC9 | DIS_state | VCU | 4 | 100 | Secondary drive inverter state |
 | 0xCA | DI_temperature | VCU | 4 | 100 | Primary drive inverter temperatures |
-| 0xCB | DIS_temperatures | VCU | 4 | 100 | Secondary motor temperatures |
+| 0xCB | DIS_temperatures | VCU | 4 | 100 | Secondary drive inverter temperatures |
 | 0x12C | BMS_info | VCU | 8 | 100 | Battery management system information |
-| 0x190 | VCU_gps | VCU | 8 | 100 | GPS location and velocity data |
+| 0x190 | VCU_gps | VCU | 8 | 100 | GPS location, velocity, and heading data |
 | 0x1F4 | VCU_error | VCU | 4 | - | Error reporting |
 
 ## Resources

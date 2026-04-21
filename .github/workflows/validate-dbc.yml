@@ -1,0 +1,17 @@
+name: validate-dbc
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  cantools:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install cantools
+      - run: python -m cantools dump --no-strict dynam-VCU+.dbc
+      - run: python -c "import cantools; cantools.database.load_file('dynam-VCU+.dbc', strict=True)"
