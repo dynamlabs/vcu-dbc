@@ -46,7 +46,7 @@ BO_ 101 VCU_shift: 1 MCU
 
 BO_ 102 VCU_state: 2 VCU
  SG_ VCU_vehicleState : 11|3@1+ (1,0) [0|7] ""  MCU
- SG_ VCU_pedal : 0|8@1+ (0.5,0) [0|127.5] "%"  MCU
+ SG_ VCU_pedal : 0|8@1+ (0.5,0) [0|100] "%"  MCU
  SG_ VCU_gearActual : 8|3@1+ (1,0) [0|7] ""  MCU
 
 BO_ 200 DI_state: 6 VCU
